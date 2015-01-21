@@ -1,11 +1,12 @@
 package com.codility.lessons.numbers;
 
+import java.util.ArrayList;
+
 /* Copyright 2009-2015 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
- * 
-A non-empty zero-indexed array A consisting of N integers is given.
-A peak is an array element which is larger than its neighbors. 
-More precisely, it is an index P such that 0 < P < N - 1,  A[P - 1] < A[P] and A[P] > A[P + 1].
-For example, the following array A:
+ * A non-empty zero-indexed array A consisting of N integers is given.
+ * A peak is an array element which is larger than its neighbors. 
+ * More precisely, it is an index P such that 0 < P < N - 1,  A[P - 1] < A[P] and A[P] > A[P + 1].
+ * For example, the following array A:
     A[0] = 1
     A[1] = 2
     A[2] = 3
@@ -18,7 +19,7 @@ For example, the following array A:
     A[9] = 4
     A[10] = 6
     A[11] = 2
-has exactly three peaks: 3, 5, 10.
+  has exactly three peaks: 3, 5, 10.
 We want to divide this array into blocks containing the same number of elements. 
 More precisely, we want to choose a number K that will yield the following blocks:
 A[0], A[1], ..., A[K - 1],
@@ -60,5 +61,40 @@ expected worst-case space complexity is O(N), beyond input storage (not counting
 Elements of input arrays can be modified.*/
 
 public class Peaks {
+	public int solution(int[] A){
+		if (A.length<3) return 0; 
+		ArrayList<Integer> pid = new ArrayList<Integer>(); 
+		for (int i=1; i<A.length-1; i++){
+			if (A[i]>A[i-1]&&A[i]>A[i+1]) pid.add(i); 
+		}	
+		if (pid.isEmpty()) return 0; 
+		int minblocksize = A.length/pid.size(); 
+		for (int blocksize=minblocksize; blocksize<A.length; blocksize++){
+			if (A.length%blocksize!=0) continue;
+			int numblocks = A.length/blocksize; 
+			if (isValid(pid, blocksize, numblocks)) return numblocks; 
+		}
+		return 1; 
+	}
+	public boolean isValid(ArrayList<Integer> pid, int blocksize, int numblocks){
+		int fill=-1; 
+		for (int i=0; i<pid.size(); i++){
+			int b=pid.get(i)/blocksize;
+			if (b>fill+1) return false;
+			fill=b; 
+		}
+		if (fill==numblocks-1) return true; 
+		return false;
+	}
+	
+	public void test(){
+		int[] A = new int[]{1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2}; 
+		System.out.println(solution(A)); 
+	}
+	
+	public static void main(String[] args){
+		Peaks p = new Peaks(); 
+		p.test(); 
+	}
 
 }
