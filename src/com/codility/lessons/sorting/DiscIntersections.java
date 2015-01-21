@@ -1,6 +1,8 @@
 package com.codility.lessons.sorting;
 
-/*Given an array A of N integers, we draw N discs in a 2D plane such that the I-th disc is centered on (0,I) and has a radius of A[I]. 
+/* Copyright 2009-2015 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
+ * 
+ * Given an array A of N integers, we draw N discs in a 2D plane such that the I-th disc is centered on (0,I) and has a radius of A[I]. 
  * We say that the J-th disc and K-th disc intersect if J != K and J-th and K-th discs have at least one common point.
  * Write a function:
  * public int solution(int[] A); 
