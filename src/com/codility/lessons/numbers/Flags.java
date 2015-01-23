@@ -1,5 +1,7 @@
 package com.codility.lessons.numbers;
 
+import java.util.ArrayList;
+
 /* A non-empty zero-indexed array A consisting of N integers is given.
 A peak is an array element which is larger than its neighbors. 
 More precisely, it is an index P such that 0 < P < N - 1 and A[P - 1] < A[P] > A[P + 1].
@@ -54,5 +56,48 @@ expected worst-case space complexity is O(N), beyond input storage (not counting
 Elements of input arrays can be modified.*/
 
 public class Flags {
-
+	public int solution(int[] A){
+		if (A.length<3) return 0; 
+		ArrayList<Integer> pid = new ArrayList<Integer>(); 
+		for (int i=1; i<A.length-1; i++){
+			if (A[i]>A[i-1]&&A[i]>A[i+1]) pid.add(i); 
+		}	
+		if (pid.isEmpty()) return 0; 
+		int f=2; 
+		int ret = 1; 
+		while (f<=pid.size()){
+			if (setK(pid, f)<f){
+				return ret; 
+			}; 
+			ret = f; 
+			f++; 
+		}
+		return ret; 
+	}
+	
+	public int setK(ArrayList<Integer> pid, int k){
+		int prev=pid.get(0);
+		int num=1; 
+		for (int i=1; i<pid.size(); i++){
+			int cur = pid.get(i); 
+			if (cur-prev>=k){
+				prev=cur; 
+				num++; 
+				if (num>=k) return num; 
+			}
+		}
+		return num; 
+	}
+	public void test(){
+		int[] A = new int[]{1, 5, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2}; 
+		//int[] A = new int[]{1, 5, 3, 4}; 
+		System.out.println(solution(A)); 
+	}
+	
+	public static void main(String[] args){
+		Flags f = new Flags(); 
+		f.test(); 
+	}
+	
+	
 }
