@@ -25,6 +25,41 @@ package com.codility.lessons.numbers;
 */ 
 public class CommonPrimeDivisors {
 	public int solution(int[] A, int[] B){
-		return 0; 
+		int l = A.length; 
+		int ret = 0; 
+		for (int i=0; i<l; i++){
+			int g = gcd(A[i], B[i]);
+			int a = A[i]/g;
+			int d = gcd(a, g); 
+			while (a!=1 && d!=1){
+				a/=gcd(a, g);
+				d=gcd(a, g); 
+			}
+			if (a!=1) continue;
+			a = B[i]/g; 
+			d = gcd(a, g); 
+			while (a!=1 && d!=1){
+				a/=gcd(a, g);
+				d=gcd(a, g); 
+			}
+			if (a==1) ret++; 
+		}
+		return ret; 
+	}
+	int gcd(int a, int b){
+		if (b==0) return a; 
+		return gcd(b, a%b); 
+	}
+	
+	public void test(){
+		int[] A = new int[]{15, 10, 750}; 
+		int[] B = new int[]{75, 30, 60}; 
+		System.out.println(solution(A, B)); 
+	}
+	
+	public static void main(String[] args){
+		CommonPrimeDivisors c = new CommonPrimeDivisors(); 
+		c.test(); 
+		
 	}
 }
