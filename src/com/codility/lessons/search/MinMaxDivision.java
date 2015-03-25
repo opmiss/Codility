@@ -45,27 +45,36 @@ Complexity:
   */
 
 public class MinMaxDivision {
+	public void print(String m){
+		System.out.println(m); 
+	}
+	
 	int solution(int K, int[] A){
 		float sum = 0; 
 		for (int a:A) sum+=a; 
 		if (K==1) return (int)sum; 
 		int ret = (int)sum/K; 
-		float _cur=0, cur; 
+		float cur=0; 
 		float fut=sum/(K-1); 
-		float _max = Math.max(_cur, fut), max, max_; 
+		float _max = Math.max(cur, fut), max; 
+		//print("_max: "+_max); 
 		for (int i=0; i<A.length; i++){
-			cur = _cur+A[i]; 
+			cur = cur+A[i]; 
 			fut = (sum-A[i])/(K-1); 
-			max = Math.max(cur, fut); 
+			max = Math.max(cur, fut);
+			//print("i: "+i+", cur: "+cur+", fut: "+fut+", max: "+max); 
 			if (max>_max){
+				//print("set here"); 
 				K--; 
 				ret = Math.max(ret, (int)_max); 
 				if (K==1) return ret;
-				_cur=0; 
+				cur=0; 
+				fut = sum/(K-1); 
+				_max = Math.max(cur, fut); 
 				i--; 
 			}
-			else {
-				_cur = cur; 
+			else { 
+				//print("continue"); 
 				_max = max; 
 				sum -=A[i]; 
 			}
@@ -76,7 +85,8 @@ public class MinMaxDivision {
 	public void test(){
 		//int[] A = new int[]{2, 1, 5, 1, 2, 2, 2};
 		//int[] A = new int[]{1, 1, 8, 7, 7};
-		int[] A = new int[]{1, 1, 8, -10};
+		//int[] A = new int[]{1, 1, 8, -10};
+		int[] A = new int[]{1, 10, 3, 3, 3, 3, 3}; 
 		System.out.println(solution(3, A)); 
 	}
 	
