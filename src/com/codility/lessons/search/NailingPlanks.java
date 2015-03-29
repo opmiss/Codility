@@ -62,11 +62,53 @@ public class NailingPlanks {
 		int M = C.length; 
 		int[][] S = new int[M][2]; 
 		for (int i=0; i<M; i++){
-			
+			S[i][0] = C[i];
+			S[i][1] = i; 
 		}
-		return 0; 
+		Arrays.sort(S, (int[] a, int[] b)->a[0]-b[0]);
+		int ret = N; 
+		for (int i=0; i<N; i++){
+			ret = find(A[i], B[i], S, ret);  
+			if (ret<0) return -1; 
+		}
+		return ret+1; 
 	}
-	int find(int start, int end, int[][] S, int p){
-		return 0; 
+	int find(int plankstart, int plankend, int[][] S, int p){
+		int start = 0, end = S.length-1, mid; 
+		int candidate = -1; 
+		if (S[end][0]<plankstart || S[start][0]>plankend) return -1; 
+		while (start<end-1){
+			mid = (start+end)/2; 
+			if (S[mid][0]>plankstart){
+				end = mid; 
+			}
+			else if (S[mid][0]<plankstart){
+				start = mid; 
+			}
+			else {
+				end = mid; 
+				break; 
+			}
+		}
+		if (plankstart<=S[end][0]&&plankend>=S[end][0]){
+			candidate = S[end][1]; 
+		}
+		else return -1; 
+		for (int i=candidate; i<S.length && S[i][0]<=plankend; i++){
+			if (S[i][1] < candidate) candidate = S[i][1];  
+		}
+		return candidate; 
+	}
+	public void test(){
+		int[] A = new int[]{1, 4, 5, 8};
+		int[] B = new int[]{4, 5, 9, 10}; 
+		int[] C = new int[]{4, 6, 7, 10, 2}; 
+		System.out.println(solution(A, B, C)); 
+		C = new int[]{4, 6, 7, 2}; 
+		System.out.println(solution(A, B, C)); 
+	}
+	public static void main(String[] args){
+		NailingPlanks np = new NailingPlanks(); 
+		np.test(); 
 	}
 }
