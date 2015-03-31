@@ -1,6 +1,9 @@
 package com.codility.lessons.search;
 
+import static org.junit.Assert.assertEquals;
 import java.util.Arrays;
+import java.util.logging.*;
+import org.junit.Test;
 
 /*Copyright 2009-2015 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
   You are given two non-empty zero-indexed arrays A and B consisting of N integers. These arrays represent N planks. 
@@ -57,6 +60,7 @@ Complexity:
   */
 
 public class NailingPlanks {
+	Logger log = Logger.getLogger(NailingPlanks.class.getName()); 
 	int solution(int[] A, int[] B, int[] C){
 		int N = A.length; 
 		int M = C.length; 
@@ -99,16 +103,14 @@ public class NailingPlanks {
 		}
 		return candidate; 
 	}
+	
+	@Test
 	public void test(){
 		int[] A = new int[]{1, 4, 5, 8};
 		int[] B = new int[]{4, 5, 9, 10}; 
 		int[] C = new int[]{4, 6, 7, 10, 2}; 
-		System.out.println(solution(A, B, C)); 
+		assertEquals(3, solution(A, B, C)); 
 		C = new int[]{4, 6, 7, 2}; 
-		System.out.println(solution(A, B, C)); 
-	}
-	public static void main(String[] args){
-		NailingPlanks np = new NailingPlanks(); 
-		np.test(); 
+		assertEquals(-1, solution(A, B, C));  
 	}
 }

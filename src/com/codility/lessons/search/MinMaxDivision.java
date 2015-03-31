@@ -1,4 +1,7 @@
 package com.codility.lessons.search;
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 /*
  * Copyright 2009-2015 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
@@ -81,15 +84,18 @@ public class MinMaxDivision {
 		}
 		return ret; 
 	}
-	
+	@Test
 	public void test(){
-		//int[] A = new int[]{2, 1, 5, 1, 2, 2, 2};
-		//int[] A = new int[]{1, 1, 8, 7, 7};
-		//int[] A = new int[]{1, 1, 8, -10};
-		int[] A = new int[]{1, 10, 3, 3, 3, 3, 3}; 
-		System.out.println(solution(3, A)); 
+		int[] A = new int[]{2, 1, 5, 1, 2, 2, 2};
+		assertEquals(6, solution(3, A)); 
+		A = new int[]{1, 1, 8, 7, 7};
+		assertEquals(10, solution(3, A)); 
+		A = new int[]{1, 1, 8, -10};
+		assertEquals(0, solution(3, A)); 
+		A = new int[]{1, 10, 3, 3, 3, 3, 3}; 
+		assertEquals(11, solution(3, A)); 
 	}
-	
+
 	public static void main(String[] args){
 		MinMaxDivision mmd = new MinMaxDivision(); 
 		mmd.test(); 
