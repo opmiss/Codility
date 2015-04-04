@@ -1,4 +1,9 @@
-package com.codility.lessons.slice;
+package com.codility.lessons.search;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
 /* Copyright 2009-2015 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
  * 
  * A non-empty zero-indexed array A consisting of N integers is given.
@@ -56,14 +61,11 @@ public class DoubleSlice {
 		}
 		return ret; 
 	}
+	
+	@Test
 	public void test(){
 		int[] A = new int[]{3, 2, 6, -1, 4, 5, -1, 2}; 
-		System.out.println(solution(A)); 
-	}
-	
-	public static void main(String[] args){
-		DoubleSlice ds = new DoubleSlice(); 
-		ds.test(); 
+		assertEquals(17, solution(A)); 
 	}
 
 }
