@@ -1,4 +1,8 @@
-package com.codility.lessons.sorting;
+package com.codility.lessons.numbers;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 /* Copyright 2009-2015 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
  * 
@@ -53,12 +57,10 @@ public class DiscIntersections {
 		 }
 		 return ret; 
 	 }
+	 
+	 @Test
 	 public void test(){
 		 int[] A = new int[]{1, 5, 2, 1, 4, 0}; 
-		 System.out.println(solution(A)); 
-	 }
-	 public static void main(String[] args){
-		 DiscIntersections di = new DiscIntersections(); 
-		 di.test(); 
+		 assertEquals(11, solution(A)); 
 	 }
 }
