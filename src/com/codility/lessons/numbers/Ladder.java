@@ -2,6 +2,8 @@ package com.codility.lessons.numbers;
 
 import java.util.Arrays;
 
+import org.junit.Test;
+
 /* Copyright 2009-2015 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
  * You have to climb up a ladder. The ladder has exactly N rungs, numbered from 1 to N. 
  * With each step, you can ascend by one or two rungs. More precisely:
@@ -71,15 +73,12 @@ public class Ladder {
 		}
 		return ret; 
 	}
+	
+	@Test
 	public void test(){
 		int[] A = new int[]{4, 4, 5, 5, 1}; 
 		int[] B = new int[]{3, 2, 4, 3, 1}; 
 		System.out.println(Arrays.toString(solution(A, B))); 
 		
-	}
-	
-	public static void main(String[] args){
-		Ladder l = new Ladder(); 
-		l.test(); 
 	}
 }

@@ -1,5 +1,7 @@
 package com.codility.lessons.numbers;
 
+import org.junit.Test;
+
 /* Copyright 2009-2015 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
  * You are given two positive integers N and M. 
  * The goal is to check whether the sets of prime divisors of integers N and M are exactly the same.
@@ -51,9 +53,10 @@ public class CommonPrimeDivisors {
 		return gcd(b, a%b); 
 	}
 	
+	@Test
 	public void test(){
 		int[] A = new int[]{15, 10, 750}; 
-		int[] B = new int[]{75, 30, 60}; 
+		int[] B = new int[]{75, 30, 180}; 
 		System.out.println(solution(A, B)); 
 	}
 	

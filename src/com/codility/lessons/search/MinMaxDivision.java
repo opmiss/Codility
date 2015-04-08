@@ -48,9 +48,6 @@ Complexity:
   */
 
 public class MinMaxDivision {
-	public void print(String m){
-		System.out.println(m); 
-	}
 	
 	int solution(int K, int[] A){
 		float sum = 0; 
@@ -60,14 +57,11 @@ public class MinMaxDivision {
 		float cur=0; 
 		float fut=sum/(K-1); 
 		float _max = Math.max(cur, fut), max; 
-		//print("_max: "+_max); 
 		for (int i=0; i<A.length; i++){
 			cur = cur+A[i]; 
 			fut = (sum-A[i])/(K-1); 
 			max = Math.max(cur, fut);
-			//print("i: "+i+", cur: "+cur+", fut: "+fut+", max: "+max); 
 			if (max>_max){
-				//print("set here"); 
 				K--; 
 				ret = Math.max(ret, (int)_max); 
 				if (K==1) return ret;
@@ -77,7 +71,6 @@ public class MinMaxDivision {
 				i--; 
 			}
 			else { 
-				//print("continue"); 
 				_max = max; 
 				sum -=A[i]; 
 			}

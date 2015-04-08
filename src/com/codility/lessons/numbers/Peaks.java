@@ -2,6 +2,8 @@ package com.codility.lessons.numbers;
 
 import java.util.ArrayList;
 
+import org.junit.Test;
+
 /* Copyright 2009-2015 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
  * A non-empty zero-indexed array A consisting of N integers is given.
  * A peak is an array element which is larger than its neighbors. 
@@ -87,14 +89,9 @@ public class Peaks {
 		return false;
 	}
 	
+	@Test
 	public void test(){
 		int[] A = new int[]{1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2}; 
 		System.out.println(solution(A)); 
 	}
-	
-	public static void main(String[] args){
-		Peaks p = new Peaks(); 
-		p.test(); 
-	}
-
 }

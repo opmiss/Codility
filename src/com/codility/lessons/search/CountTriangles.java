@@ -45,7 +45,6 @@ public class CountTriangles {
 		for (int i=0; i<A.length-2; i++){
 			for (int j=(i+1), k=(j+1); j<A.length-1; j++){
 				while (k<A.length && A[i]+A[j]>A[k]) k++; 
-				//Log.info("i: "+i+", j: "+j+", k:"+k+", add: "+(k-j-1)); 
 				ret+=(k-j-1); 
 			}
 		}

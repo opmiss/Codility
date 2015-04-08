@@ -2,6 +2,8 @@ package com.codility.lessons.numbers;
 
 import java.util.Arrays;
 
+import org.junit.Test;
+
 /* Copyright 2009-2015 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
  * You are given a non-empty zero-indexed array A consisting of N integers.
  * For each number A[i] such that 0 <= i < N, we want to count the number of elements of the array that are not the divisors of A[i]. 
@@ -61,6 +63,8 @@ public class CountNonDivisors {
 		for (int i=0; i<N; i++) ret[i] = N-ret[i]; 
 		return ret; 
 	}
+	
+	@Test
 	public void test(){
 		int[] A = new int[]{3, 1, 2, 3, 6};
 		System.out.println(Arrays.toString(solution(A))); 
