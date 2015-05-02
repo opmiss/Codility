@@ -61,8 +61,8 @@
 **[NumberSolitaire]()**
 **[MinAbsSum]()**
 ###Lesson 99 [Future training](https://codility.com/programmers/lessons/14)
-[TreeHeight]()
-[OddOccurrencesInArray]()
+[TreeHeight](https://codility.com/demo/results/demoJ4MRSY-TSZ/)
+[OddOccurrencesInArray](https://codility.com/demo/results/demoQXN73Z-SDJ/)
 [BinaryGap]()
 [StrSymmetryPoint]()
 **[ArrayInversionCount]()**
