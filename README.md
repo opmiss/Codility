@@ -63,6 +63,6 @@
 ###Lesson 99 [Future training](https://codility.com/programmers/lessons/14)
 [TreeHeight](https://codility.com/demo/results/demoJ4MRSY-TSZ/)
 [OddOccurrencesInArray](https://codility.com/demo/results/demoQXN73Z-SDJ/)
-[BinaryGap]()
-[StrSymmetryPoint]()
+[BinaryGap](https://codility.com/demo/results/demoPMAYZS-4J2/)
+[StrSymmetryPoint](https://codility.com/demo/results/demoXCM9AN-DAX/)
 **[ArrayInversionCount]()**
