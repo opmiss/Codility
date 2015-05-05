@@ -65,4 +65,4 @@
 [OddOccurrencesInArray](https://codility.com/demo/results/demoQXN73Z-SDJ/)
 [BinaryGap](https://codility.com/demo/results/demoPMAYZS-4J2/)
 [StrSymmetryPoint](https://codility.com/demo/results/demoXCM9AN-DAX/)
-**[ArrayInversionCount]()**
+**[ArrayInversionCount](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/search/CountInversions.java)**
