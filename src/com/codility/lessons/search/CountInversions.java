@@ -3,7 +3,6 @@ package com.codility.lessons.search;
 import static org.junit.Assert.assertEquals;
 
 import java.util.LinkedList;
-import java.util.logging.Logger;
 
 import org.junit.*;
 
@@ -28,32 +27,49 @@ Complexity:
 */
 
 public class CountInversions {
-	Logger log = Logger.getLogger(NailingPlanks.class.getName()); 
+	
+	int count = 0; 
+	
 	public int solution(int[] A){
-		int ret = 0; 
-		LinkedList<Integer> list = new LinkedList<Integer>(); 
-		for (int i = 0; i< A.length; i++){
-			ret+=add(A[i], list); 
-		}
-		return ret; 
-	}
-	int find(int a, LinkedList<Integer> list, int start, int end){ 
-		if (a<list.get(start)) return start;
-		if (a>=list.get(end)) return end+1; 
-		if (start==end || start==end-1) return start+1;
-		int mid = (start+end)/2; 
-		int m = list.get(mid); 
-		if (a>m) return find(a, list, mid, end); 
-		if (a<m) return find(a, list, start, mid); 
-		return mid+1; 
+		merge(A, 0, A.length-1); 
+		return count; 
 	}
 	
-	int add(int a, LinkedList<Integer> list){// add element a, and return the number of elements right to a in the list
-		int n = list.size(); 
-		if (n==0) {list.add(a); return 0;}
-		int id = find(a, list, 0, n-1);
-		list.add(id, a); 
-		return n-id;   
+	public void mergeSort(int[] A, int start, int end){
+		if (start>=end) return; 
+		if (start==end-1) {
+			if (A[start]>A[end]){
+				int t = A[start]; 
+				A[start] = A[end]; 
+				A[end] = t; 
+			}
+			return; 
+		}
+		int mid = (start+end)/2; 
+		mergeSort(A, start, mid); 
+		mergeSort(A, mid+1, end);
+		merge(A, start, end); 
+	}
+	
+	public void merge(int[] A, int start, int end){
+		int mid = (start+end)/2; 
+		int n1 = mid-start+1; 
+		int n2 = end-mid; 
+		int[] A1 = new int[n1];
+		int[] A2 = new int[n2];
+		for (int i=start; i<=mid; i++) A1[i-start] = A[i]; 
+		for (int i=mid+1; i<=end; i++) A2[i-mid-1] = A[i]; 
+		int i1=0, i2=0; 
+		for (int i=start; i<=end; i++){
+			if (A2[i2]<A1[i1]) {
+				A[i]=A2[i2]; i2++; 
+				count+=n1-i1; 
+			}
+			else {
+				A[i]=A1[i1];
+				i1++; 
+			}
+		}
 	}
 	
 	@Test
@@ -64,5 +80,7 @@ public class CountInversions {
 		assertEquals(2, solution(A)); 
 		A = new int[]{5, 4, 3, 2, 1}; 
 		assertEquals(10, solution(A)); 
+		A = new int[]{1, 2, 3, 4, 5}; 
+		assertEquals(0, solution(A)); 
 	}
 }
