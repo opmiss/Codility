@@ -31,6 +31,7 @@ public class CountInversions {
 	int count = 0; 
 	
 	public int solution(int[] A){
+		count=0; 
 		merge(A, 0, A.length-1); 
 		return count; 
 	}
@@ -52,6 +53,7 @@ public class CountInversions {
 	}
 	
 	public void merge(int[] A, int start, int end){
+		System.out.println(A.toString()); 
 		int mid = (start+end)/2; 
 		int n1 = mid-start+1; 
 		int n2 = end-mid; 
@@ -59,16 +61,23 @@ public class CountInversions {
 		int[] A2 = new int[n2];
 		for (int i=start; i<=mid; i++) A1[i-start] = A[i]; 
 		for (int i=mid+1; i<=end; i++) A2[i-mid-1] = A[i]; 
-		int i1=0, i2=0; 
-		for (int i=start; i<=end; i++){
+		int i1=0, i2=0, i=start;
+		while (i1<n1&&i2<n2){
 			if (A2[i2]<A1[i1]) {
-				A[i]=A2[i2]; i2++; 
+				A[i++]=A2[i2++]; 
 				count+=n1-i1; 
+				System.out.println(count); 
+				if (count>1000000000) count=-1; 
 			}
 			else {
-				A[i]=A1[i1];
-				i1++; 
+				A[i++]=A1[i1++];
 			}
+		}
+		while(i1<n1){
+			A[i++]=A1[i1++];
+		}
+		while(i2<n2){
+			A[i++]=A2[i2++]; 
 		}
 	}
 	
