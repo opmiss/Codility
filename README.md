@@ -1,6 +1,3 @@
-
-[Codility](https://codility.com/programmers/lessons/)
-
 ###Lesson 1 [Time Complexity](https://codility.com/programmers/lessons/1)
 [FrogJmp]()
 [PermMissingElem]()
@@ -58,8 +55,8 @@
 [MaxNonoverlappingSegments]()
 [TieRopes]()
 ###Lesson 15 [Dynamic programming](https://codility.com/programmers/lessons/16)
-**[NumberSolitaire]()**
-**[MinAbsSum]()**
+**[NumberSolitaire](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/dp/NumberSolitaire.java)**
+**[MinAbsSum](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/dp/MinAbsSum.java)**
 ###Lesson 99 [Future training](https://codility.com/programmers/lessons/14)
 [TreeHeight](https://codility.com/demo/results/demoJ4MRSY-TSZ/)
 [OddOccurrencesInArray](https://codility.com/demo/results/demoQXN73Z-SDJ/)
