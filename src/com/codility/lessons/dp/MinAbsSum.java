@@ -5,9 +5,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /*
-Given array of integers, find the lowest absolute sum of elements.
-test result
-https://codility.com/demo/results/demoGE3VDQ-SC8/
+ * Given array of integers, find the lowest absolute sum of elements.
+ * https://codility.com/demo/results/demoGE3VDQ-SC8/
 */
 public class MinAbsSum {
 	public int solution(int[] A){

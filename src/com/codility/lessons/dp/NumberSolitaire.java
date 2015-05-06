@@ -4,7 +4,9 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-/* In a given array, find the subset of maximal sum in which the distance between consecutive elements is at most 6. */
+/* In a given array, find the subset of maximal sum in which the distance between consecutive elements is at most 6. 
+ * https://codility.com/demo/results/demoNZHQQE-EAD/
+ * */
 
 public class NumberSolitaire {
 	public int solution(int[] A){
