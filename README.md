@@ -52,8 +52,8 @@
 **[MinAbsSumOfTwo]()** 
 **[CountTriangles]()**
 ###Lesson 14 [Greedy algorithms](https://codility.com/programmers/lessons/15)
-[MaxNonoverlappingSegments]()
-[TieRopes]()
+[MaxNonoverlappingSegments](https://codility.com/demo/results/demoZ2A9JW-PXH/)
+[TieRopes](https://codility.com/demo/results/demo2W2XC5-G5T/)
 ###Lesson 15 [Dynamic programming](https://codility.com/programmers/lessons/16)
 **[NumberSolitaire](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/dp/NumberSolitaire.java)**
 **[MinAbsSum](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/dp/MinAbsSum.java)**
