@@ -47,10 +47,10 @@
 **[MinMaxDivision]()**
 **[NailingPlanks]()**
 ###Lesson 13 [Caterpillar method](https://codility.com/programmers/lessons/13)
-[AbsDistinct]()
-[CountDistinctSlices]()
-**[MinAbsSumOfTwo]()** 
-**[CountTriangles]()**
+[AbsDistinct](https://codility.com/demo/results/demo4MCBX9-3M4/)
+[CountDistinctSlices](https://codility.com/demo/results/demoDZ3AWD-K2H/)
+**[MinAbsSumOfTwo](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/search/MinSumTwo.java)** 
+**[CountTriangles](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/search/CountTriangles.java)**
 ###Lesson 14 [Greedy algorithms](https://codility.com/programmers/lessons/15)
 [MaxNonoverlappingSegments](https://codility.com/demo/results/demoZ2A9JW-PXH/)
 [TieRopes](https://codility.com/demo/results/demo2W2XC5-G5T/)
