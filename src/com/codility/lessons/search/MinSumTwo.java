@@ -55,6 +55,9 @@ Elements of input arrays can be modified.
 */
 
 public class MinSumTwo {
+	
+	//https://codility.com/demo/results/demoFQ7CMU-DZQ/
+	
 	public int solution(int[] A){
 		Arrays.sort(A);
 		int i = 0, j = A.length-1, s, r=Integer.MAX_VALUE;

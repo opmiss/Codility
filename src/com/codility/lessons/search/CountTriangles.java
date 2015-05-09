@@ -38,6 +38,8 @@ Complexity:
 
 public class CountTriangles {
 	
+	// https://codility.com/demo/results/demoGZYCTB-RJQ/
+	
 	public int solution(int[] A){
 		if (A.length<3) return 0; 
 		Arrays.sort(A); 
