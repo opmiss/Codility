@@ -2,7 +2,6 @@ package com.codility.lessons.search;
 
 import static org.junit.Assert.assertEquals;
 import java.util.Arrays;
-import java.util.logging.*;
 import org.junit.Test;
 
 /*Copyright 2009-2015 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.

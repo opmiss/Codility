@@ -59,6 +59,9 @@ expected worst-case space complexity is O(L), beyond input storage (not counting
 Elements of input arrays can be modified.
 */ 
 public class Ladder {
+	
+	// https://codility.com/demo/results/demo9K49M8-DSK/
+	
 	int[] f = new int[30000]; 
 	Ladder(){
 		f[0] = 1; f[1] = 2; 

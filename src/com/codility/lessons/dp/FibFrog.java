@@ -1,9 +1,10 @@
-package com.codility.lessons.numbers;
+package com.codility.lessons.dp;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.*;
+import org.junit.Test;
+
 /*
  * The Fibonacci sequence is defined using the following recursive formula:
 
@@ -67,61 +68,53 @@ Complexity:
 expected worst-case time complexity is O(N*log(N));
 expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
 Elements of input arrays can be modified.*/
-import java.util.Queue;
-import java.util.logging.Logger;
-
-import org.junit.Test;
-
-import com.codility.lessons.search.NailingPlanks;
-
 public class FibFrog {
-	Logger log = Logger.getLogger(NailingPlanks.class.getName()); 
-	//an array that holds a list of Fibonacci numbers
-	ArrayList<Integer> F = new ArrayList<Integer>(); 
-	int prevF = 1, curF = 1; 
-	int solution(int[] A){
-		int N = A.length; 
-		if (N==0) return 1; 
-		int temp; 
-		//fill in the Fib array with the largest element less than N
-		while (curF<=N+2){
-			F.add(curF);
-			temp = curF; 
-			curF +=prevF;
-			prevF = temp; 
+	
+	//https://codility.com/demo/results/demo79WEUC-F86/
+	
+	int[] F = new int[25]; 
+	public FibFrog(){
+		F[0]=1; 
+		F[1]=2; 
+		for (int i=2; i<F.length; i++){
+			F[i]=F[i-1]+F[i-2]; 
 		}
-		//log.info("fib list: "+F); 
-		//breadth first search
-		ArrayList<Queue<Integer>> Qs = new ArrayList<Queue<Integer>>();
-		Queue<Integer> Q1 = new LinkedList<Integer>(); 
-		Queue<Integer> Q2 = new LinkedList<Integer>();
-		int reach = -1; 
-		Q2.add(reach); 
-		Qs.add(Q1); Qs.add(Q2); 
-		int cur_pos = -1, step = 1;
-		do {
-			while (!Qs.get(step % 2).isEmpty()) {
-				cur_pos = Qs.get(step%2).poll(); 
-				for (int f = F.size() - 1; f >= 0; f--) {
-					reach = cur_pos + F.get(f);
-					if (reach == N)
-						return step;
-					if (reach < N && A[reach] == 1)
-						Qs.get((step+1)%2).add(reach);
-				}
+	}
+	
+	int solution(int[] A){
+		int[] dp = new int[A.length+1]; 
+		for (int i=0; i<dp.length; i++) 
+			dp[i] = -1;
+		for (int i=0; i<dp.length; i++){
+			if (i<A.length && A[i]==0) continue; 
+			int k = Arrays.binarySearch(F, i+1);
+			if (k>=0) {
+				dp[i]=1;
+				continue; 
 			}
-			if (Qs.get((++step)%2).isEmpty()) return -1; 
-		} while (true);
+			for (int j=0; j<F.length; j++){
+				int p = i-F[j]; 
+				if (p<0) break;
+				if (dp[p]<0) continue; 
+				if (dp[i]<0) dp[i] = dp[p]+1; 
+				else dp[i] = (dp[i]<(dp[p]+1))?dp[i]:(dp[p]+1); 
+			}
+		}
+		return dp[A.length]; 
 	}
 	
 	@Test
 	public void test(){
 		int[] A = new int[]{0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0}; 
-		//System.out.println(solution(A)); 
 		assertEquals(3, solution(A)); 
 		A = new int[]{0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0}; 
 		assertEquals(1, solution(A)); 
 		A = new int[]{0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0}; 
 		assertEquals(-1, solution(A));
+	}
+	
+	public static void main(String[] args){
+		//FibFrog ff = new FibFrog(); 
+		
 	}
 }
