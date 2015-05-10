@@ -60,7 +60,9 @@ Complexity:
   */
 
 public class NailingPlanks {
-	Logger log = Logger.getLogger(NailingPlanks.class.getName()); 
+	
+	//https://codility.com/demo/results/demo7FU4UW-FXQ/
+	
 	int solution(int[] A, int[] B, int[] C){
 		int N = A.length; 
 		int M = C.length; 
@@ -69,39 +71,53 @@ public class NailingPlanks {
 			S[i][0] = C[i];
 			S[i][1] = i; 
 		}
-		Arrays.sort(S, (int[] a, int[] b)->a[0]-b[0]);
-		int ret = N; 
-		for (int i=0; i<N; i++){
-			ret = find(A[i], B[i], S, ret);  
-			if (ret<0) return -1; 
+		Arrays.sort(S, (int[] a, int[] b)->a[0]-b[0]); 
+		int leng = 1; 
+		for (int i=1; i<S.length; i++)
+			if (S[i][0]!=S[i-1][0]) 
+				S[leng++] = S[i]; 
+		int num = 0; 
+		for (int i=0; i<A.length; i++){
+			int s = findRight(A[i], S, 0, leng-1); 
+			int e = findLeft(B[i], S, 0, leng-1); 
+			if (s<0 || e<0||s>e) return -1; 
+			int candidate = S[s++][1]; 
+			while (s<=e){
+				candidate = (candidate>S[s][1])? S[s][1]:candidate; 
+				s++; 
+			} 
+			num = (num<++candidate)?candidate:num; 
 		}
-		return ret+1; 
+		return num; 
 	}
-	int find(int plankstart, int plankend, int[][] S, int p){
-		int start = 0, end = S.length-1, mid; 
-		int candidate = -1; 
-		if (S[end][0]<plankstart || S[start][0]>plankend) return -1; 
-		while (start<end-1){
-			mid = (start+end)/2; 
-			if (S[mid][0]>plankstart){
-				end = mid; 
-			}
-			else if (S[mid][0]<plankstart){
-				start = mid; 
-			}
-			else {
-				end = mid; 
-				break; 
-			}
+	int findRight(int val, int[][] V, int start, int end){
+	    //find smallest x in [start, end] such that V[x][0]>=val, elements in V are distinct
+		if (V[end][0]<val) return -1; 
+		if (V[start][0]>=val) return start; 
+		if (start==end-1) return end; 
+		int mid = (start+end)/2; 
+		if (V[mid][0] > val){
+			return findRight(val, V, start, mid); 
 		}
-		if (plankstart<=S[end][0]&&plankend>=S[end][0]){
-			candidate = S[end][1]; 
+		else if (V[mid][0] < val){
+			return findRight(val, V, mid, end); 
 		}
-		else return -1; 
-		for (int i=candidate; i<S.length && S[i][0]<=plankend; i++){
-			if (S[i][1] < candidate) candidate = S[i][1];  
+		else return mid; 
+	}
+	
+	int findLeft(int val, int[][] V, int start, int end){
+		//find largest x in [start, end] such that V[x][0]<=val, elements in V are distinct
+		if (V[start][0] > val) return -1; 
+		if (V[end][0] <= val) return end; 
+		if (start==end-1) return start; 
+		int mid = (start+end)/2; 
+		if (V[mid][0]>val){
+			return findLeft(val, V, start, mid); 
 		}
-		return candidate; 
+		else if (V[mid][0]<val){
+			return findLeft(val, V, mid, end); 
+		}
+		else return mid; 
 	}
 	
 	@Test
@@ -109,8 +125,12 @@ public class NailingPlanks {
 		int[] A = new int[]{1, 4, 5, 8};
 		int[] B = new int[]{4, 5, 9, 10}; 
 		int[] C = new int[]{4, 6, 7, 10, 2}; 
-		assertEquals(3, solution(A, B, C)); 
+		assertEquals(4, solution(A, B, C)); 
 		C = new int[]{4, 6, 7, 2}; 
 		assertEquals(-1, solution(A, B, C));  
+	}
+	
+	public static void main(String[] args){
+		
 	}
 }

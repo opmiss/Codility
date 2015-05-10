@@ -26,7 +26,7 @@ import org.junit.Test;
   [2, 1], [5, 1], [2, 2, 2] with a large sum of 6.
   The goal is to minimize the large sum. In the above example, 6 is the minimal large sum.
 Write a function:
-  int solution(int K, int M, int A[], int N);
+  int solution(int K, int M, int A[]);
   that, given integers K, M and a non-empty zero-indexed array A consisting of N integers, returns the minimal large sum.
   For example, given K = 3, M = 5 and array A such that:
   A[0] = 2
@@ -49,49 +49,51 @@ Complexity:
 
 public class MinMaxDivision {
 	
-	int solution(int K, int[] A){
-		float sum = 0; 
-		for (int a:A) sum+=a; 
-		if (K==1) return (int)sum; 
-		int ret = (int)sum/K; 
-		float cur=0; 
-		float fut=sum/(K-1); 
-		float _max = Math.max(cur, fut), max; 
-		for (int i=0; i<A.length; i++){
-			cur = cur+A[i]; 
-			fut = (sum-A[i])/(K-1); 
-			max = Math.max(cur, fut);
-			if (max>_max){
-				K--; 
-				ret = Math.max(ret, (int)_max); 
-				if (K==1) return ret;
-				cur=0; 
-				fut = sum/(K-1); 
-				_max = Math.max(cur, fut); 
-				i--; 
+	//https://codility.com/demo/results/demoC6TE4Z-YWN/
+	
+	int solution(int K, int M, int[] A){
+		int sum = 0; 
+		int max = 0; 
+		for (int a:A){
+			sum+=a; 
+			max = (max<a)?a:max;
+		}
+		int left = max, right = sum; 
+		while (left<right){
+			int mid = (left+right)/2; 
+			int k = countGroup(A, mid);
+			if (k<=K){
+				right = mid; 
 			}
-			else { 
-				_max = max; 
-				sum -=A[i]; 
+			else {
+				left = mid+1; 
 			}
 		}
-		return ret; 
+		return left; 
 	}
+	
+	int countGroup(int[] A, int target){
+		int num = 0; 
+		int sum = 0; 
+		for (int i=0; i<A.length; i++){
+			sum+=A[i]; 
+			if (sum>target) {
+				num++;
+				sum = A[i]; 
+			}
+		}
+		if(sum>0) num++; 
+		return num; 
+	}
+	
 	@Test
 	public void test(){
 		int[] A = new int[]{2, 1, 5, 1, 2, 2, 2};
-		assertEquals(6, solution(3, A)); 
+		assertEquals(6, solution(3, 5, A)); 
 		A = new int[]{1, 1, 8, 7, 7};
-		assertEquals(10, solution(3, A)); 
-		A = new int[]{1, 1, 8, -10};
-		assertEquals(0, solution(3, A)); 
+		assertEquals(10, solution(3, 8, A));  
 		A = new int[]{1, 10, 3, 3, 3, 3, 3}; 
-		assertEquals(11, solution(3, A)); 
+		assertEquals(11, solution(3, 10, A)); 
 	}
-
-	public static void main(String[] args){
-		MinMaxDivision mmd = new MinMaxDivision(); 
-		mmd.test(); 
-	}
-
+	
 }
