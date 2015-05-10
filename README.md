@@ -41,8 +41,8 @@
 [ChocolatesByNumbers]()
 **[CommonPrimeDivisors]()**
 ###Lesson 11 [Fibonacci numbers](https://codility.com/programmers/lessons/11)
-**[Ladder]()**
-**[FibFrog]()**
+**[Ladder](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/numbers/Ladder.java)**
+**[FibFrog](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/dp/FibFrog.java)**
 ###Lesson 12 [Binary search algorithm](https://codility.com/programmers/lessons/12)
 **[MinMaxDivision](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/search/MinMaxDivision.java)**
 **[NailingPlanks](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/search/NailingPlanks.java)**
