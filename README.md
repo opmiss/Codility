@@ -44,8 +44,8 @@
 **[Ladder]()**
 **[FibFrog]()**
 ###Lesson 12 [Binary search algorithm](https://codility.com/programmers/lessons/12)
-**[MinMaxDivision]()**
-**[NailingPlanks]()**
+**[MinMaxDivision](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/search/MinMaxDivision.java)**
+**[NailingPlanks](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/search/NailingPlanks.java)**
 ###Lesson 13 [Caterpillar method](https://codility.com/programmers/lessons/13)
 [AbsDistinct](https://codility.com/demo/results/demo4MCBX9-3M4/)
 [CountDistinctSlices](https://codility.com/demo/results/demoDZ3AWD-K2H/)
