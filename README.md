@@ -35,8 +35,8 @@
 **[Peaks]()**
 **[Flags]()**
 ###Lesson 9 [Sieve of Eratosthenes](https://codility.com/programmers/lessons/9)
-[CountSemiprimes]()
-**[CountNonDivisible]()**
+[CountSemiprimes](https://codility.com/demo/results/demoQKEPMB-VTQ/)
+**[CountNonDivisible](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/numbers/CountNonDivisors.java)**
 ###Lesson 10 [Euclidean algorithm](https://codility.com/programmers/lessons/10)
 [ChocolatesByNumbers]()
 **[CommonPrimeDivisors]()**
