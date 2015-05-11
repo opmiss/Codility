@@ -39,6 +39,9 @@ import org.junit.Test;
    */ 
 
 public class CountNonDivisors {
+	
+	//https://codility.com/demo/results/demoSNFXGJ-F3W/
+	
 	public int[] solution(int[] A){
 		int N = A.length; 
 		int[] count = new int[N*2+1];

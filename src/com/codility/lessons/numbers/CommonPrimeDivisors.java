@@ -26,6 +26,9 @@ import org.junit.Test;
     expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments).
 */ 
 public class CommonPrimeDivisors {
+	
+	//https://codility.com/demo/results/demoB2UF8F-96C/
+	
 	public int solution(int[] A, int[] B){
 		int l = A.length; 
 		int ret = 0; 
@@ -63,6 +66,5 @@ public class CommonPrimeDivisors {
 	public static void main(String[] args){
 		CommonPrimeDivisors c = new CommonPrimeDivisors(); 
 		c.test(); 
-		
 	}
 }
