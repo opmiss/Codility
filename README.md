@@ -38,8 +38,8 @@
 [CountSemiprimes](https://codility.com/demo/results/demoQKEPMB-VTQ/)
 **[CountNonDivisible](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/numbers/CountNonDivisors.java)**
 ###Lesson 10 [Euclidean algorithm](https://codility.com/programmers/lessons/10)
-[ChocolatesByNumbers]()
-**[CommonPrimeDivisors]()**
+[ChocolatesByNumbers](https://codility.com/demo/results/demoGX4AYM-2S3/)
+**[CommonPrimeDivisors](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/numbers/CommonPrimeDivisors.java)**
 ###Lesson 11 [Fibonacci numbers](https://codility.com/programmers/lessons/11)
 **[Ladder](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/numbers/Ladder.java)**
 **[FibFrog](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/dp/FibFrog.java)**
