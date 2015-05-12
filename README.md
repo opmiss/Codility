@@ -18,22 +18,22 @@
 [Triangle]()
 **[NumberOfDiscIntersections]()**
 ###Lesson 5 [Stacks and Queues](https://codility.com/programmers/lessons/5)
-[Brackets]()
-[Nesting]()
-[Fish]()
-[StoneWall]()
+[Brackets](https://codility.com/demo/results/demoYWS4Q9-G2C/)
+[Nesting](https://codility.com/demo/results/demoTNZYH3-Y3R/)
+[Fish](https://codility.com/demo/results/demoKDA72Q-QM2/)
+[StoneWall](https://codility.com/demo/results/demoZQJHS9-4ZP/)
 ###Lesson 6 [Leader](https://codility.com/programmers/lessons/6)
-[EquiLeader]()
-[Dominator]()
+[EquiLeader](https://codility.com/demo/results/demoAH28K7-5YN/)
+[Dominator](https://codility.com/demo/results/demoJCUA4U-WUZ/)
 ###Lesson 7 [Maximum slice problem](https://codility.com/programmers/lessons/7)
-[MaxProfit]()
-[MaxSliceSum]()
+[MaxProfit](https://codility.com/demo/results/demoBQVV8H-AYB/)
+[MaxSliceSum](https://codility.com/demo/results/demoM64HWG-ZMW/)
 **[MaxDoubleSliceSum]()**
 ###Lesson 8 [Prime and composite numbers](https://codility.com/programmers/lessons/8)
-[MinPerimeterRectangle]()
-[CountFactors]()
-**[Peaks]()**
-**[Flags]()**
+[MinPerimeterRectangle](https://codility.com/demo/results/demoBVU4GF-JY9/)
+[CountFactors](https://codility.com/demo/results/demoPEH85K-UW4/)
+**[Peaks](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/numbers/Peaks.java)**
+**[Flags](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/numbers/Flags.java)**
 ###Lesson 9 [Sieve of Eratosthenes](https://codility.com/programmers/lessons/9)
 [CountSemiprimes](https://codility.com/demo/results/demoQKEPMB-VTQ/)
 **[CountNonDivisible](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/numbers/CountNonDivisors.java)**
