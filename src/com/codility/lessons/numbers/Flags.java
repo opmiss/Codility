@@ -60,6 +60,9 @@ Elements of input arrays can be modified.*/
 
 public class Flags {
 	public int solution(int[] A){
+		
+		//https://codility.com/demo/results/demoNR9KUG-F8V/
+		
 		if (A.length<3) return 0; 
 		ArrayList<Integer> pid = new ArrayList<Integer>(); 
 		for (int i=1; i<A.length-1; i++){
