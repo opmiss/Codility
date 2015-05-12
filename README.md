@@ -3,20 +3,20 @@
 [PermMissingElem]()
 [TapeEquilibrium]()
 ###Lesson 2 [Counting Elements](https://codility.com/programmers/lessons/2)
-[PermCheck]()
-[FrogRiverOne]()
-**[MissingInteger]()**
-**[MaxCounters]()**
+[PermCheck](https://codility.com/demo/results/demoAMCNUG-KPB/)
+[FrogRiverOne](https://codility.com/demo/results/demoM55AG9-S6B/)
+**[MissingInteger](https://codility.com/demo/results/demoSQH5ZH-F9R/)**
+**[MaxCounters](https://codility.com/demo/results/demoVUYW7X-JFH/)**
 ###Lesson 3 [Prefix Sums](https://codility.com/programmers/lessons/3)
-[PassingCars]()
-**[CountDiv]()**
-**[MinAvgTwoSlice]()**
-**[GenomicRangeQuery]()**
+[PassingCars](https://codility.com/demo/results/demoGCGR4G-RBR/)
+**[CountDiv](https://codility.com/demo/results/demoH8JHGK-W5W/)**
+**[MinAvgTwoSlice](https://codility.com/demo/results/demo3KN2J9-PW7/)**
+**[GenomicRangeQuery](https://codility.com/demo/results/demoNA9ZJ6-KV9/)**
 ###Lesson 4 [Sorting](https://codility.com/programmers/lessons/4)
-[MaxProductOfThree]()
-[Distinct]()
-[Triangle]()
-**[NumberOfDiscIntersections]()**
+[MaxProductOfThree](https://codility.com/demo/results/demoSB8NK9-D76/)
+[Distinct](https://codility.com/demo/results/demoS277PF-E36/)
+[Triangle](https://codility.com/demo/results/demoD5V2KA-FED/)
+**[NumberOfDiscIntersections](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/numbers/DiscIntersections.java)**
 ###Lesson 5 [Stacks and Queues](https://codility.com/programmers/lessons/5)
 [Brackets](https://codility.com/demo/results/demoYWS4Q9-G2C/)
 [Nesting](https://codility.com/demo/results/demoTNZYH3-Y3R/)
