@@ -1,7 +1,7 @@
 ###Lesson 1 [Time Complexity](https://codility.com/programmers/lessons/1)
-[FrogJmp]()
-[PermMissingElem]()
-[TapeEquilibrium]()
+[FrogJmp](https://codility.com/demo/results/demoMXS2QM-X86/)
+[PermMissingElem](https://codility.com/demo/results/demoJS8H6J-QXU/)
+[TapeEquilibrium](https://codility.com/demo/results/demoFE9JGK-Q38/)
 ###Lesson 2 [Counting Elements](https://codility.com/programmers/lessons/2)
 [PermCheck](https://codility.com/demo/results/demoAMCNUG-KPB/)
 [FrogRiverOne](https://codility.com/demo/results/demoM55AG9-S6B/)
@@ -28,7 +28,7 @@
 ###Lesson 7 [Maximum slice problem](https://codility.com/programmers/lessons/7)
 [MaxProfit](https://codility.com/demo/results/demoBQVV8H-AYB/)
 [MaxSliceSum](https://codility.com/demo/results/demoM64HWG-ZMW/)
-**[MaxDoubleSliceSum]()**
+**[MaxDoubleSliceSum](https://github.com/opmiss/Codility/blob/master/src/com/codility/lessons/search/DoubleSlice.java)**
 ###Lesson 8 [Prime and composite numbers](https://codility.com/programmers/lessons/8)
 [MinPerimeterRectangle](https://codility.com/demo/results/demoBVU4GF-JY9/)
 [CountFactors](https://codility.com/demo/results/demoPEH85K-UW4/)
